@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# 產出報告（HTML/JSON），預設不入庫
+/reports/*.html
+/reports/*.json
+!/reports/.gitkeep
+
+# 本機設定（可能含個人搜索偏好）
+config.local.yaml
+
+# OS
+.DS_Store

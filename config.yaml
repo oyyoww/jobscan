@@ -1,0 +1,37 @@
+# jobscan 搜索設定檔
+# ------------------------------------------------------------------
+# 這份檔案是「定義搜索關鍵字」的主要方式。改這裡就能決定要搜什麼。
+# 也可以在命令列用參數覆蓋（例：jobscan run --city 上海 --query 后端）。
+# 個人偏好建議複製一份為 config.local.yaml（不會被 git 追蹤），
+# 執行時用：jobscan run -c config.local.yaml
+# ------------------------------------------------------------------
+
+# 搜索關鍵字清單：可同時搜多組「職位 + 技能」組合。
+# 每一組會分別對每個啟用的平台送出一次搜索。
+searches:
+  - query: "后端工程师"        # 職位關鍵字（必填）
+    skills: ["Go", "Kubernetes"]  # 技能關鍵字（選填）；會與 query 合併成搜索詞
+  - query: "前端工程师"
+    skills: ["React", "TypeScript"]
+
+# 共用篩選條件（套用到上面每一組搜索）。
+# 這些欄位對應 boss search 的參數；留空字串或移除即不套用。
+filters:
+  city: "深圳"            # 城市，如 北京 / 上海 / 深圳（獵聘一次僅支援單一地點）
+  salary: ""             # 薪資範圍，如 "20-40K"
+  experience: ""         # 經驗，如 "3-5年"
+  education: ""          # 學歷，如 "本科"
+  job_type: ""           # 職位類型：全职/兼职/实习
+
+# 每組搜索最多擷取幾筆（跨頁彙整的上限，用來控制請求量/風控風險）。
+limit: 20
+
+# 平台開關。
+# - boss：boss-agent-cli，求職者端，搜「職位」。
+# - liepin：liepin-cil（liepin-tech-2026），求職者端，`liepin-cli job search` 搜「職位」。
+#   需先用 token 認證（liepin-cli setup，或設環境變數 LIEPIN_USER_TOKEN）。
+providers:
+  boss:
+    enabled: true
+  liepin:
+    enabled: true

@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "schema_version": "1.0",
+  "command": "search",
+  "data": [
+    {
+      "job_id": "enc_1",
+      "title": "高级后端工程师(Go)",
+      "company": "示例科技",
+      "salary": "30-50K·14薪",
+      "city": "深圳",
+      "experience": "3-5年",
+      "education": "本科",
+      "skills": ["Go", "Kubernetes", "MySQL"],
+      "security_id": "SAMPLE_SID_1"
+    },
+    {
+      "job_id": "enc_2",
+      "title": "后端开发工程师",
+      "company": "示例网络",
+      "salary": "25-40K",
+      "city": "深圳",
+      "experience": "3-5年",
+      "education": "本科",
+      "skills": ["Go", "Redis"],
+      "security_id": "SAMPLE_SID_2"
+    }
+  ],
+  "pagination": {"page": 1, "has_more": false},
+  "error": null,
+  "hints": {}
+}
