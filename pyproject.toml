@@ -3,6 +3,8 @@ name = "jobscan"
 version = "0.1.0"
 description = "用設定檔定義搜索關鍵字，呼叫 boss-agent-cli / liepin-cli 搜索職位，整理為 HTML 表格報告"
 requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
 dependencies = [
     "PyYAML>=6.0",
 ]
